@@ -1,0 +1,16 @@
+
+
+
+Architecture of the Travel planner agent 
+
+* Given a destination name, we want to fetch
+
+1. Weather Condition 
+2. Attraction Places 
+3. Hotels 
+4. Food and Restaurants ( famous culnaries )
+5. Transportation
+6. Currency value 
+
+7. All expense calculation and report generation
+

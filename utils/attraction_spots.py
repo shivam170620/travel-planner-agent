@@ -37,7 +37,6 @@ class GeoapifyAttractionSpotGenerator:
             response = requests.get(self.base_url, params=params, timeout=10)
             response.raise_for_status()
             data = response.json()
-            print("Fetched attractions:", data)
         except Exception as e:
             print(f"Error fetching attraction spots: {e}")
             return []

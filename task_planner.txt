@@ -1,12 +1,9 @@
-
-
-
 Architecture of the Travel planner agent 
 
 * Given a destination name, we want to fetch
 
 1. Weather Condition 
-2. Attraction Places 
+2. Attraction Places  
 3. Hotels 
 4. Food and Restaurants ( famous culnaries )
 5. Transportation
@@ -14,3 +11,33 @@ Architecture of the Travel planner agent
 
 7. All expense calculation and report generation
 
+- > Make api calls to generate the related info and store the data in vector db and  tehn use rag pipline one by one 
+and make report 
+
+--------------------------------------
+For Attraction Places we are trying foursquare, yelp, google places api
+geoapify - https://api.geoapify.com/v2/places?categories=commercial.supermarket&filter=rect%3A10.716463143326969%2C48.755151258420966%2C10.835314015356737%2C48.680903341613316&limit=20&apiKey=2ca70f60011d40c58401faf987b96e4a 
+
+Places api 
+
+import requests
+from requests.structures import CaseInsensitiveDict
+
+url = "https://api.geoapify.com/v2/places?categories=commercial.supermarket&filter=rect%3A10.716463143326969%2C48.755151258420966%2C10.835314015356737%2C48.680903341613316&limit=20&apiKey=2ca70f60011d40c58401faf987b96e4a"
+
+headers = CaseInsensitiveDict()
+headers["Accept"] = "application/json"
+
+resp = requests.get(url, headers=headers)
+
+print(resp.status_code)
+
+
+Places details api 
+
+https://api.geoapify.com/v2/place-details?id=id%3D514d368a517c511e40594bfd7b574ec84740f00103f90135335d1c00000000920313416e61746f6d697363686573204d757365756d&apiKey=2ca70f60011d40c58401faf987b96e4a
+
+
+-------------------------------------
+
+Can use  wikipedia api as well 

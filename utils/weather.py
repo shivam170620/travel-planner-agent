@@ -212,6 +212,7 @@ class WeatherService:
             print(f"{date:<15} {max_temp:<10} {min_temp:<10} {avg_temp:<10} {weather:<40}")
         
         print(f"{'='*60}\n")
+        return report
 
     def get_bounding_box(self, latitude: float, longitude: float, delta: float = 0.25) -> Tuple[float, float, float, float]:
         """
@@ -253,5 +254,6 @@ def print_weather_for_city(city_name: str, days: int = 7) -> None:
     weather_service = WeatherService()
     report = weather_service.generate_weather_report(city_name, days)
     weather_service.print_weather_report(report)
+    return report
 
 

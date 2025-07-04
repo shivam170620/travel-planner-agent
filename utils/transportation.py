@@ -87,6 +87,7 @@ class TransportationService:
         try:
             response = requests.get(self.base_url, params=params, timeout=15)
             response.raise_for_status()
+
             return response.json()
         except Exception as e:
             logger.error(f"Error fetching local transportation: {e}")
@@ -154,7 +155,6 @@ def example_flight_search():
         outbound_date="2024-07-01", 
         return_date="2024-07-10"
     )
-    print("Flight Results:", flights)
 
 def example_transportation_search():
     """
@@ -167,7 +167,6 @@ def example_transportation_search():
         dest_lon=77.1025,
         mode="transit"
     )
-    print("Transportation Results:", transport)
 
 def example_nearby_transport():
     """
@@ -178,4 +177,3 @@ def example_nearby_transport():
         lon=77.2090,
         transport_type="metro station"
     )
-    print("Nearby Transport Options:", nearby)

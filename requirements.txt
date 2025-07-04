@@ -18,6 +18,11 @@ python-dotenv
 langsmith
 openai>=1.0.0
 anthropic>=0.15.0
+langchain_openai
+langchain_google_genai
+langchain_groq
+fpdf>=2.0.0
+reportlab
 # Dataset utilities
 # datasets>=2.0.0
 # sentence-transformers

@@ -17,7 +17,8 @@ class SerpAPIHotelsFetcher:
             "engine": "google_maps",
             "type": "search",
             "q": f"hotels in area {self.city_name}",
-            "api_key": self.serpapi_key
+            "api_key": self.serpapi_key,
+            "gl": "in",  
         }
 
         try:
